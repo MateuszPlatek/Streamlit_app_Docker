@@ -12,6 +12,6 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip3 install -r requirements.txt
+RUN pip3 install streamlit --break-system-packages
 
-ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "POST_to_AWS_gateway.py", "--server.port=8501", "--server.address=0.0.0.0"]
